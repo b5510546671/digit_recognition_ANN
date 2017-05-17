@@ -1,5 +1,8 @@
 # reference: http://machinelearningmastery.com/handwritten-digit-recognition-using-convolutional-neural-networks-python-keras/
 
+# to test with our own digit data, follow this: https://keras.io/models/model/#methods
+# method: predict
+
 import numpy
 from keras.datasets import mnist
 from keras.models import Sequential
