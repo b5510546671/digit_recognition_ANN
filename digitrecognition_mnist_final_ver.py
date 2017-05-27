@@ -57,7 +57,7 @@ print ("33: {}".format(image_data_train.shape))
 print ("33: {}".format(image_data_test.shape))
 
 # one hot encode outputs
-#transform vector of class integers into a binary matrix
+# transform vector of class integers into a binary matrix
 label_train = np_utils.to_categorical(label_train)
 label_test = np_utils.to_categorical(label_test)
 num_classes = label_test.shape[1]
@@ -71,7 +71,6 @@ scores = model.evaluate(image_data_test, label_test, verbose=0)
 print("Error: %.2f%%" % (100-scores[1]*100))
 
 while True:
-
     input_file_number = input("Enter image number or 'exit' to exit: ")
 
     if str(input_file_number) == "exit":
@@ -79,12 +78,12 @@ while True:
 
     elif input_file_number.isdigit():
         # try with our own digit image for prediction
+        # change to your local path
         filepath = "C:\\Users\\knotsupavit\\Desktop\\ann\\neural2d\\images\\mnist\\validate-data\\" + str(input_file_number) + ".bmp"
 
         photo_predict = ndimage.imread(filepath, mode='L')
 
         print ("4: {}".format(type(photo_predict)))
-
         print ("5: {}".format(photo_predict.shape))
 
         # show image
@@ -92,21 +91,17 @@ while True:
         plt.show()
 
         print ("6: {}".format(type(photo_predict)))
-
         print ("7: {}".format(photo_predict.shape))
 
         photo_predict_preprocessed = np.array([[photo_predict]])
         photo_predict_preprocessed = photo_predict_preprocessed / 255
+
         print ("7.5: {}".format(photo_predict_preprocessed.shape))
-
-
         print ("8: {}".format(type(photo_predict_preprocessed)))
-
         print ("9: {}".format(photo_predict_preprocessed.shape))
 
         prediction = model.predict(photo_predict_preprocessed).tolist()
         print(prediction[0])
-
         print(type(prediction[0]))
 
         count = 0
