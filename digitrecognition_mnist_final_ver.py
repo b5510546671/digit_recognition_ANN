@@ -1,3 +1,5 @@
+# MNIST Handwritten Dataset can be found here: https://github.com/davidrmiller/neural2d/wiki/MNIST_Handwritten_dataset
+
 import numpy as np
 from keras.datasets import mnist
 from keras.models import Sequential
